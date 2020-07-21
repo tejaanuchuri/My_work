@@ -14,6 +14,8 @@ int main(){
 			v.pb(i);
 		}else if(n%i==0){
 			v.pb(i);
+			if(n/i==n)
+				continue;
 			v.pb(n/i);
 		}
 	}
