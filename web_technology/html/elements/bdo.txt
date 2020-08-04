@@ -1,0 +1,9 @@
+1. name of element : bdo
+2. description : overrides the current directionality of text, so that the text within is rendered in a different direction.
+3. attributes :
+    1. dir
+4. values :
+    1. ltr : Indicates that the text should go in a left-to-right direction.
+    2. rtl : Indicates that the text should go in a right-to-left direction.
+5. examples:
+    <p><bdo dir="rtl">This text will go right to left.</bdo></p>
