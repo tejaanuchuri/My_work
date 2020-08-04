@@ -1,0 +1,10 @@
+1. name of the element : bdi
+2. description:
+    The HTML Bidirectional Isolate element (<bdi>)  tells the browser's bidirectional algorithm to treat the text it contains in isolation from its surrounding text. It's particularly useful when a website dynamically inserts some text and doesn't know the directionality of the text being inserted.
+3. attributes:
+    1. dir
+4. values
+    1. rtl
+    2. ltr
+4. examples:
+    <li><span class="name" dir="auto">تیز سمی</span>: 5th place</li>
