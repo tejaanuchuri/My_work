@@ -1,0 +1,8 @@
+1. name : address
+2. description : The HTML <address> element indicates that the enclosed HTML provides contact information for a person or people, or for an organization.
+3. examples :
+    <address>
+      <a href="mailto:jim@rock.com">jim@rock.com</a><br>
+        <a href="tel:+13115552368">(311) 555-2368</a>
+    </address>
+
