@@ -1,0 +1,37 @@
+1. Element Name: a
+   1. The HTML <a> element (or anchor element) creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address. Content within each <a> should indicate the link's destination.
+2. Attributes:
+    1. href : The URL that the hyperlink points to.
+    2. target: Where to display the linked URL.
+                1. _self
+                2. _blank
+                3. _parent
+                4. _top
+    3. download : download only works for same-origin URLs
+    4. hreflang
+    5. ping
+    6. referrerpolicy
+    7. rel
+    8. type : Hints at the linked URL’s format with a MIME(now properly called "media type", but also sometimes "content type") type. No built-in functionality.
+
+3. Examples:
+    1. Linking to an absolute URL
+        <a href="https://www.mozilla.com">
+            Mozilla
+        </a>
+    2. Linking to relative URLs
+        <a href="//example.com">Scheme-relative URL</a>
+        <a href="/en-US/docs/Web/HTML">Origin-relative URL</a>
+        <a href="./p">Directory-relative URL</a>
+    3. Linking to an element on the same page
+        <!-- <a> element links to the section below -->
+        <p><a href="#Section_further_down">
+             Jump to the heading below
+        </a></p>
+        <!-- Heading to link to -->
+        <h2 id="Section_further_down">Section further down</h2>\
+    4. Linking to an email address
+        <a href="mailto:nowhere@mozilla.org">Send email to nowhere</a>
+    5. Linking to telephone numbers
+        <a href="tel:+49.157.0156">+49 157 0156</a>
+        <a href="tel:+1(555)5309">(555) 5309</a>
