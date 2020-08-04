@@ -1,0 +1,5 @@
+1. name : br
+2. description : The HTML <br> element produces a line break in text (carriage-return). It is useful for writing a poem or an address, where the division of lines is significant.
+3. examples : 
+    Hearest thou<br>
+    Hardly a breath;<br>
