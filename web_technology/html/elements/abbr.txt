@@ -1,0 +1,6 @@
+1. element name : abbr
+    1. represents an abbreviation or acronym
+2. attribute :
+    1. title :The title attribute has a specific semantic meaning when used with the <abbr> element;
+3. Examples :
+   <p>Ashok's joke made me <abbr title="Laugh Out Loud">LOL</abbr> bigtime.</p>
