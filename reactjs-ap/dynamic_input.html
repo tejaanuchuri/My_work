@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script type="text/javascript">
+            function data(){
+                let a = document.getElementsByClassName("name")[0].value;
+
+                if(a%2==0)
+                    document.writeln("even number");
+                else    
+                    document.writeln("odd number");
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id="name" name="">
+        <button onclick="data()">click</button>
+    </body>
+</html>
