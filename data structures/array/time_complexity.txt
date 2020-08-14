@@ -1,0 +1,25 @@
+Data Structure Name : array
+
+Defination: 1. An array is collection of items stored at contiguous memory locations.
+            2. The idea is to store multiple items of same type together.
+
+Create :1. static array    int arr_name[100]; 
+        2. dynamic array   int* arr_name = (int*)malloc(sizeof(int)*(sizeofarray));
+        3. vector          vcetor<int> arr_name;
+
+Time Complexcity:
+
+1. insert at front :                    o(n)
+2. insert at center:                    o(n)
+3. insert at last  :                    o(1)
+4. delete at first :                    o(n)
+5. delete at center:                    o(n)
+6. delete at last  :                    o(1)
+7. search a element:                    o(n)
+8. search a element (sort)              o(logn)
+9. access a element index/position      o(1)
+10 find min value in array              o(n)
+11.find min value in array sort         o(1)
+12.find max value in array              o(n)
+13.find max value in array sort         o(1)
+
