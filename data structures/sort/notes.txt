@@ -16,3 +16,5 @@ When all data is placed in-memory, then sorting is called internal sorting.
 Stability in sorting algorithms(geeksforgeeks.org/stability-in-sorting-algorithms/)
 
 time complexcity of all sort algorithm(https://www.geeksforgeeks.org/time-complexities-of-all-sorting-algorithms/)
+
+external sorting (https://www.geeksforgeeks.org/external-sorting/)
