@@ -1,0 +1,20 @@
+Data Structure Name : stack
+
+Defination: 1. Stack is a linear data structure.
+            2. The order may be LIFO(Last In First Out) or FILO(First In Last Out).
+
+Create: 1. use array         
+        2. use linkedlist   
+        3. stack            stack<int> stack_name;
+
+Time Complexcity:
+
+1. insert element                       o(1)
+2. delete element                       o(1)
+3. find min element                     o(n)
+4. find max element                     o(n)
+5. search a element                     o(n)
+6. empty                                o(1)
+7. size                                 o(1)
+
+reference link :(https://www.geeksforgeeks.org/stack-data-structure-introduction-program/);
