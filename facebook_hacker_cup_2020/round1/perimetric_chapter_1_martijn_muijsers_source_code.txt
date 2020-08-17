@@ -1,0 +1,103 @@
+package rone;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.util.StringTokenizer;
+import java.util.TreeSet;
+
+import general.Problem;
+
+public class A1 {
+	
+	static Problem problem = new Problem("perimetric_chapter_1", Problem.Mode.REAL);
+	
+	public static void main(String[] args) throws IOException {
+		try (BufferedReader r = problem.getInputReader(); BufferedWriter w = problem.getOutputWriter()) {
+			int T = Integer.parseInt(r.readLine());
+			for (int cas = 1; cas <= T; cas++) {
+				StringTokenizer s = new StringTokenizer(r.readLine());
+				int N = Integer.parseInt(s.nextToken());
+				int K = Integer.parseInt(s.nextToken());
+				long W = Long.parseLong(s.nextToken());
+				long[] L = new long[N];
+				long[] H = new long[N];
+				s = new StringTokenizer(r.readLine());
+				for (int i = 0; i < K; i++) {
+					L[i] = Long.parseLong(s.nextToken());
+				}
+				s = new StringTokenizer(r.readLine());
+				long AL = Long.parseLong(s.nextToken());
+				long BL = Long.parseLong(s.nextToken());
+				long CL = Long.parseLong(s.nextToken());
+				long DL = Long.parseLong(s.nextToken());
+				s = new StringTokenizer(r.readLine());
+				for (int i = 0; i < K; i++) {
+					H[i] = Long.parseLong(s.nextToken());
+				}
+				s = new StringTokenizer(r.readLine());
+				long AH = Long.parseLong(s.nextToken());
+				long BH = Long.parseLong(s.nextToken());
+				long CH = Long.parseLong(s.nextToken());
+				long DH = Long.parseLong(s.nextToken());
+				while (K < N) {
+					L[K] = 1+safeMod(safeMod(AL*L[K-2], DL)+safeMod(BL*L[K-1], DL)+CL, DL);
+					H[K] = 1+safeMod(safeMod(AH*H[K-2], DH)+safeMod(BH*H[K-1], DH)+CH, DH);
+					K++;
+				}
+				long perimeter = 0;
+				long totper = 1;
+				long prevL = -W*3-2;
+				TreeSet<Integer> relevantH = new TreeSet<>((i1, i2) -> {
+					int hCompare = Long.compare(H[i1], H[i2]);
+					if (hCompare != 0) {
+						return hCompare;
+					}
+					return Integer.compare(i1, i2);
+				});
+				for (int i = 0; i < N; i++) {
+					long lDif = L[i]-prevL;
+					perimeter += Math.min(lDif, W)*2;
+					//System.out.println("wdif " + Math.min(lDif, W));
+					if (lDif > W) {
+						//System.out.println("hdif a " + H[i]);
+						perimeter += H[i]*2;
+					} else {
+						while (!relevantH.isEmpty()) {
+							if (L[i]-L[relevantH.last()] > W) {
+								relevantH.pollLast();
+							} else {
+								break;
+							}
+						}
+						long highestH = 0;
+						if (!relevantH.isEmpty()) {
+							highestH = H[relevantH.last()];
+						}
+						//System.out.println("hdif b " + (H[i]-highestH));
+						if (H[i] > highestH) {
+							perimeter += 2*(H[i]-highestH);
+						}
+					}
+					prevL = L[i];
+					relevantH.add(i);
+					//perimeter = safeMod(perimeter, 1000000007);
+					totper *= safeMod(perimeter, 1000000007);
+					totper = safeMod(totper, 1000000007);
+					//System.out.println(cas+" "+i+" "+perimeter+" "+totper);
+				}
+				w.write("Case #" + cas + ": " + totper + "\n");
+			}
+		}
+		problem.checkSample();
+	}
+	
+	static long safeMod(long a, long b) {
+		a %= b;
+		if (a < 0) {
+			return a+b;
+		}
+		return a;
+	}
+	
+}

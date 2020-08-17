@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+const int MOD=1e9+7, MAXN=1e6+1;
+int t;
+void solve() {
+    long long n, k, w, a, b, c, d, l[MAXN], h[MAXN];
+    cin>>n>>k>>w;
+    for(int i=0; i<k; i++) cin>>l[i];
+    cin>>a>>b>>c>>d;
+    for(int i=k; i<n; i++) l[i]=(a*l[i-2]+b*l[i-1]+c)%d+1;
+    for(int i=0; i<k; i++) cin>>h[i];
+    cin>>a>>b>>c>>d;
+    for(int i=k; i<n; i++) h[i]=(a*h[i-2]+b*h[i-1]+c)%d+1;
+    long long p[MAXN], res;
+    res=p[0]=2*(w+h[0]);
+    for(int i=1; i<n; i++) {
+        int j=i-1;
+        for(int k=i-1; k>=0 && l[i]-l[k]<=w; k--) {
+            if(h[k]>h[j]) {
+                j=k;
+                if(h[k]>h[i]) break;
+            }
+        }
+        p[i]=(p[j]+2*min(l[i]-l[j], w))%MOD;
+        if(l[i]-l[j]>w) p[i]=(p[i]+2*h[i])%MOD;
+        else p[i]=(p[i]+2*max((long long)0, h[i]-h[j]))%MOD;
+        // cout<<j<<" "<<l[i]<<" "<<h[i]<<" "<<p[i]<<"\n";
+        res=(res*p[i])%MOD;
+    }
+    cout<<res<<"\n";
+}
+int main() {
+    ios::sync_with_stdio(0); cin.tie(0);
+    if(fopen("input.txt", "r"))
+        freopen("input.txt", "r", stdin),
+        freopen("output.txt", "w", stdout);
+    cin>>t;
+    for(int i=1; i<=t; i++) {
+        cout<<"Case #"<<i<<": ";
+        solve();
+    }
+}

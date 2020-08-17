@@ -1,0 +1,89 @@
+#include <bits/stdc++.h>
+#include <limits>
+
+using namespace std;
+
+using LL = long long;
+constexpr const int kMod = 1000000007;
+
+struct Room {
+  LL x;
+  LL h;
+  LL w;
+};
+
+class Runner {
+public:
+  LL Run() {
+    ReadInput();
+
+    LL ans = 1;
+    vector<LL> pans(N);
+    stack<int> active;
+    int j = 0;
+    for (int i = 0; i < N; i++) {
+      if (i > 0)
+        assert(rooms[i].x > rooms[i - 1].x);
+      int j = -1;
+      while (!active.empty()) {
+        if (rooms[active.top()].x + rooms[active.top()].w < rooms[i].x)
+          break;
+        j = active.top();
+        if (rooms[active.top()].h > rooms[i].h)
+          break;
+        active.pop();
+      }
+      active.push(i);
+      if (j == -1) {
+        pans[i] = (i == 0 ? 0 : pans[i - 1]) + 2 * (rooms[i].h + rooms[i].w);
+      } else {
+        pans[i] = pans[j] + 2 * (rooms[i].x - rooms[j].x) +
+                  2 * max(0LL, rooms[i].h - rooms[j].h);
+      }
+      pans[i] %= kMod;
+
+      ans *= pans[i];
+      ans %= kMod;
+    }
+
+    return ans;
+  }
+
+private:
+  void ReadInput() {
+    LL W;
+    int K;
+    scanf("%d %d %lld", &N, &K, &W);
+    rooms.resize(N);
+    for (int i = 0; i < K; i++)
+      scanf("%lld", &rooms[i].x);
+    LL Al, Bl, Cl, Dl;
+    scanf("%lld %lld %lld %lld", &Al, &Bl, &Cl, &Dl);
+    for (int i = K; i < N; i++) {
+      rooms[i].x = ((Al * rooms[i - 2].x + Bl * rooms[i - 1].x + Cl) % Dl) + 1;
+    }
+    for (int i = 0; i < K; i++)
+      scanf("%lld", &rooms[i].h);
+
+    LL Ah, Bh, Ch, Dh;
+    scanf("%lld %lld %lld %lld", &Ah, &Bh, &Ch, &Dh);
+    for (int i = K; i < N; i++) {
+      rooms[i].h = ((Ah * rooms[i - 2].h + Bh * rooms[i - 1].h + Ch) % Dh) + 1;
+    }
+    for (int i = 0; i < N; i++)
+      rooms[i].w = W;
+  }
+
+  int N;
+  vector<Room> rooms;
+};
+
+int main() {
+  int t;
+  scanf("%d", &t);
+  for (int i = 1; i <= t; i++) {
+    printf("Case #%d: %Ld\n", i, Runner().Run());
+  }
+
+  return 0;
+}
