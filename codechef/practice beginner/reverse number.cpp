@@ -8,8 +8,7 @@ int main(){
 		cin>>n;
 		ans=0;
 		while(n!=0){
-			if((n%10)==4)
-			ans++;
+			ans = ans*10 + (n%10);
 			n/=10;
 		}
 		cout<<ans<<endl;
