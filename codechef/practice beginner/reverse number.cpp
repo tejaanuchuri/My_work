@@ -2,7 +2,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-	long long int t,n,m,ans;
+	long long int t,n,m,ans,p;
 	cin>>t;
 	while(t--){
 		cin>>n;
