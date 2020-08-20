@@ -6,7 +6,7 @@ void print(long long int arr[100],long long int n){
 	}cout<<endl;
 	return ;
 }
-void selection_sort(long long int arr[100],long long int n){
+void bubble_sort(long long int arr[100],long long int n){
 	print(arr,n);
 	for(int i=0;i<n-1;i++){
 		for(int j=0;j<n-1-i;j++){
@@ -23,6 +23,6 @@ int main(){
 	long long int arr[n];
 	for(i=0;i<n;i++)
 		cin>>arr[i];
-	selection_sort(arr,n);
+	bubble_sort(arr,n);
 	return 0;
 }
