@@ -18,12 +18,9 @@ struct node* insert_front(struct node* head,int data){
 }
 
 bool search(struct node* head,int key){
-	while(head!=NULL){
-		if(head->data==key)
-			return 1;
-		head= head->next;
-	}
-	return 0;
+	if(head==NULL)
+		return false;
+	return (head->data==key) || search(head->next,key);
 }
 int main(){
 	struct node* head=NULL;
