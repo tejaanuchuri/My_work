@@ -7,9 +7,13 @@ struct node{
 };
 void print_list(struct node* head){
 	while(head!=NULL){
-		cout<<head->data<<" ";
+		if(head->next==NULL)	
+			cout<<head->data<<endl;
+		else{
+			cout<<head->data<<"->";	
+		}
 		head=head->next;
-	}cout<<endl;
+	}
 	return ;
 }
 struct node* new_node(int data){
