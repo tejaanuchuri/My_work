@@ -3,7 +3,6 @@
 using namespace std;
 struct node{
 	int data;
-	bool flag=false;
 	struct node *next;
 };
 struct node* new_node(int data){
@@ -26,11 +25,13 @@ struct node* insert_end(struct node* head,int data){
 	return head;
 }
 bool detect_loop(struct node* head){
-	while(head!=NULL){
-		if(head->flag==true)
+	struct node* slow = head;
+	struct node* fast = head;
+	while(fast!=NULL && fast->next!=NULL){
+		slow = slow->next;
+		fast = fast->next->next;
+		if(slow==fast)
 			return true;
-		head->flag = true;
-		head = head->next;
 	}
 	return false;
 }
@@ -42,7 +43,7 @@ int main(){
 		cin>>x;
 		head = insert_end(head,x);
 	}
-	head->next->next->next = head->next;
+	//head->next->next->next = head->next;
 	if(detect_loop(head))	
 		cout<<"YES"<<endl;
 	else
