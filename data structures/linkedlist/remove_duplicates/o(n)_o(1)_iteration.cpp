@@ -41,7 +41,7 @@ void print_list(struct node* head){
 	return ;
 }
 
-struct node* remove_duplicates(struct node* head){
+struct node* remove_duplicates_in_unsorted_list(struct node* head){
 	if(head==NULL || head->next==NULL)
 		return head;
 	struct node* cur = head;

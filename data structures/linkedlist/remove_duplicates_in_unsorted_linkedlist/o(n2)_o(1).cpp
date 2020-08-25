@@ -40,22 +40,25 @@ void print_list(struct node* head){
 	}
 	return ;
 }
-void remove_duplicates(struct node* head){
-	struct node* to_free;
-	
-	if(head == NULL)
-		return ;
-	if(head->next!=NULL){
-		if(head->data == head->next->data){
-			to_free = head->next;
-			head->next = head->next->next;
-			free(to_free);
-			remove_duplicates(head);
-		}else{
-			remove_duplicates(head->next);
+
+struct node* remove_duplicates_in_unsorted_list(struct node* head){
+	struct node* p = head;
+	struct node* q = NULL;
+	struct node* dup;
+	while(p!=NULL && p->next!=NULL){
+		q = p;
+		while(q->next!=NULL){
+			if(p->data == q->next->data){
+				dup = q->next;
+				q->next = q->next->next;
+				free(dup);
+			}else{
+				q = q->next;
+			}
 		}
+		p = p->next;
 	}
-	return ;
+	return head;
 }
 int main(){
 	struct node* head=NULL;
@@ -66,7 +69,7 @@ int main(){
 		head = insert_end(head,x);
 	}
 	print_list(head);
-	remove_duplicates(head);
+	head = remove_duplicates_in_unsorted_list(head);
 	print_list(head);
 	return 0;
 }
