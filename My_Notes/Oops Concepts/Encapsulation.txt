@@ -1,0 +1,46 @@
+ Encapsulation :
+    => Encapsulation is defined as wrapping up of data and information under a single unit. 
+    => It is the process of binding together the data and functions in a class.
+    => It is applied to prevent direct access to the data for security reasons.
+    => The functions of class are applied for this purpose. 
+    => For example, the net banking facility to the customers allows only the 
+       authorized person with the required login id and password to get access 
+       and that too only for his/her part of the information in the bank datasource.
+
+Role of access specifiers in encapsulation:
+    => access specifiers plays an important role in implementing encapsulation in C++.
+       The process of implementing encapsulation can be sub-divided into two steps:
+       => The data members should be labeled as private using the private access specifiers.
+       => The member function which manipulates the data members should be labeled as public using the public access specifier.
+
+class Encapsulation 
+{ 
+    private: 
+        // data hidden from outside world 
+        int x; 
+          
+    public: 
+        // function to set value of  
+        // variable x 
+        void set(int a) 
+        { 
+            x =a; 
+        } 
+          
+        // function to return value of 
+        // variable x 
+        int get() 
+        { 
+            return x; 
+        } 
+}; 
+
+int main() 
+{ 
+    Encapsulation obj; 
+      
+    obj.set(5); 
+      
+    cout<<obj.get(); 
+    return 0; 
+} 
