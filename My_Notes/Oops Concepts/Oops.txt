@@ -1,0 +1,15 @@
+Oops : 
+    1. It is Technique is a methodlogy.
+    2. Oops standards for object oriented program.
+    
+    3. Why Oops ?
+        => Oops is a methodlogy introduced to represent real world objects using a program for automating
+           real world business by achieving security as business need security.
+        => All living and non-living object are considered as objects.
+        => hence real world objects such as person,animal,bike,computer... etc 
+    
+    4. Buildig blocks of Oops:
+        => Class
+        => objects
+        => every java program start with Class because using Class we can represent real world object like person 
+    

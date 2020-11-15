@@ -1,8 +1,8 @@
 1. Object is an instance of a Class.
 2. when it is instantiated (i.e. an object is created) memory is allocated.
 3. Any real world living and non-living thing is called object.
-3. It is the basic unit of Object Oriented Programming and it represents the real life entities.
-4. An object consists of:
+4. It is the basic unit of Object Oriented Programming and it represents the real life entities.
+5. An object consists of:
 
     State: It is represented by attributes of an object. It also shows properties of an object.
     Behavior: It is represented by methods of an object. It shows response of an object with other objects.
