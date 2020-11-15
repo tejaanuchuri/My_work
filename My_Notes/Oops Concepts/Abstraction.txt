@@ -1,0 +1,15 @@
+Abstraction : 
+    => An abstraction in C++ is the process of hiding the internal implementations and displaying only the required details.
+    => For example, when you send an important message through email, at that time only writing and clicking the send option is used.
+       This outcome is just the success message that is displayed to confirm you that your email has been sent. However,
+       the process followed in transferring the data through email is not displayed because it is of no use to you.
+
+Abstract classes and Abstract methods :
+
+  => An abstract class is a class that is declared with abstract keyword.
+  => An abstract method is a method that is declared without an implementation.
+  => An abstract class may or may not have all abstract methods. Some of them can be concrete methods
+  => A method defined abstract must always be redefined in the subclass,thus making overriding compulsory OR either make subclass itself abstract.
+  => Any class that contains one or more abstract methods must also be declared with abstract keyword.
+  => There can be no object of an abstract class.That is, an abstract class can not be directly instantiated with the new operator.
+  => An abstract class can have parametrized constructors and default constructor is always present in an abstract class.
