@@ -6,6 +6,7 @@
     => For example, the net banking facility to the customers allows only the 
        authorized person with the required login id and password to get access 
        and that too only for his/her part of the information in the bank datasource.
+    => It is also called combination data Hiding and abstraction.
 
 Role of access specifiers in encapsulation:
     => access specifiers plays an important role in implementing encapsulation in C++.
