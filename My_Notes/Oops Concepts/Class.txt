@@ -1,0 +1,20 @@
+Class : 
+
+1. Class is uderdefined data-type
+2. It's acts as blue print of an object.
+3. It is a user-defined data type, which holds its own data members and member functions,
+   which can be accessed and used by creating an instance of that class.
+4. When a class is defined, no memory is allocated but when it is instantiated 
+   (i.e. an object is created) memory is allocated.
+
+structure : 
+ 
+ class className{          // class declare
+    Acess_Specifier;
+    data_members;
+    member_Function();
+ };
+
+ className objectName;     // object creation
+
+ objectName.data_members;  // acess_data_members
