@@ -13,3 +13,10 @@ Abstract classes and Abstract methods :
   => Any class that contains one or more abstract methods must also be declared with abstract keyword.
   => There can be no object of an abstract class.That is, an abstract class can not be directly instantiated with the new operator.
   => An abstract class can have parametrized constructors and default constructor is always present in an abstract class.
+
+Advantages of Abstraction :
+
+    => It reduces the complexity of viewing the things.
+    => Avoids code duplication and increases reusability.
+    => Helps to increase security of an application or program as only important details are provided to the user.
+    
