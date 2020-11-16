@@ -1,0 +1,33 @@
+Features of any programming language is nothing but the services or basic facilities provided by the language to the programmers.
+
+The java language provides the following Features:
+
+    => Simple:
+       1. Java is Simple programming language.
+       2. Because all the difficult concepts of c and c++ have been omitted in java.
+       3. For example , the concept of pointers
+
+    => Protable:
+       1. If a program yields the same result on every machine, then that program is called protable.
+
+    => High performance:
+       1. The problem with the interpeter inside the jvm is that slow.
+       2. Because of this , java programs are slow.
+       3. To overcome this problem, along with the interpeter , javasoft people has introduced JIT(just in time)
+          compiler , which enhace the speed of execution. so, now in jvm, both interpeter and JIT compiler work together to run the program.
+     
+    => platform independent:
+       1. If a program yields the same result on every machine, then that program is called protable.
+
+    => secure :  
+       1. Security problems like eaves dropping, tampering, impersonation, and virus threats can be eliminated or minimized by using java on internet.
+
+    => Dynamic loading : (java works on Dynamic loading)
+       1. The concept of allocating the memory space and loading all the functionalities to the Ram dymanic at the run-time.
+    => Static loading : ( java does not work on Static loading)
+       1. The concept of allocating the memory space and loading all the functionalities to the Ram dymanic before the program execution.
+
+    => Distributed :
+       1. Information is Distributed on various computers in a network.
+       2. Using Java, we can write programs, which caputure Information and Distribute it to the client.
+       3. This is possible with java Because , java can handle protocals like TCP/UDP. 
