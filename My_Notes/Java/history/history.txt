@@ -1,0 +1,9 @@
+History of java :
+    => Java was developed by "sun microsystem" by James Gosling & his team.
+    => The trail version realeased in 1990 was named as oak (name of the tree).
+    => Initially oak was not completely sloved by in the industry problems.
+    => Later in the year 1995 it was realeased to the industry named as "JAVA".
+    => There are three categories of java namely :
+        1. J2SE : It is used by the industry for developing standalone applications.
+        2. J2EE : It is used for developing the server side applications to exchange the data between J2SE and J2EE.
+        3. J2ME : It is used mobile /  wireless applications.
